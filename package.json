@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "asbuild:untouched": "asc node_modules/as-bind/lib/assembly/as-bind.ts assembly/main.ts -b build/untouched.wasm -t build/untouched.wat --validate --sourceMap --debug",
+    "asbuild:optimized": "asc node_modules/as-bind/lib/assembly/as-bind.ts assembly/main.ts -b build/optimized.wasm -t build/optimized.wat --validate --sourceMap --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "test": "node tests"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.9.4",
+    "as-bind": "^0.2.0"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.9.4"
+  }
+}
